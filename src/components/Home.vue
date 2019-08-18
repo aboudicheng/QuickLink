@@ -17,7 +17,7 @@ import uniqid from "uniqid";
 import { db, storage } from "../db";
 import moment from "moment";
 import { Promise } from "q";
-import { setTimeout, setInterval } from "timers";
+import { setInterval } from "timers";
 
 const sessionsRef = db.ref("sessions");
 const storageRef = storage.ref();
