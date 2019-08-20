@@ -271,7 +271,7 @@ export default {
       }
       const isLt5M = file.size / 5242880 < 1;
       if (!isLt5M) {
-        this.$message.error("Image must smaller than 5MB!");
+        this.$message.error("Image must be smaller than 5MB!");
       }
       return isJPG && isLt5M;
     }
