@@ -10,4 +10,4 @@ const config = {
 };
 const app = Firebase.initializeApp(config)
 export const db = app.database()
-export const storage = Firebase.storage()
+export const storage = app.storage()

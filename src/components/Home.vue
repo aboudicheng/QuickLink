@@ -123,7 +123,8 @@ export default {
           const val = snapshot.val();
           if (val) {
             const values = Object.values(val);
-            values.forEach(data => {
+            const keys = Object.keys(val);
+            values.forEach((data, i) => {
               if (this.isExpired(data.timeStamp)) {
                 if (data.messages) {
                   Object.values(data.messages).forEach(message => {
@@ -132,7 +133,7 @@ export default {
                     }
                   });
                 }
-                sessionsRef.child(Object.keys(val)[0]).remove();
+                sessionsRef.child(keys[i]).remove();
               }
             });
             resolve();
@@ -145,7 +146,7 @@ export default {
     isExpired(timeStamp) {
       const codeTime = moment(timeStamp);
       const currentTime = moment();
-      if (currentTime.isBefore(codeTime)) {
+      if (currentTime.isBefore(codeTime) || codeTime.diff(currentTime, 'minutes') > 5) {
         return false;
       }
       return true;
