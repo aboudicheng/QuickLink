@@ -223,12 +223,15 @@ export default {
     },
     sendMessage() {
       const { id } = this.$route.params;
-      sessionsRef.child(`${this.key}/messages`).push({
-        type: "text",
-        data: this.input,
-        timeStamp: moment().valueOf()
-      });
-      this.input = "";
+      this.input = this.input.trim();
+      if (this.input.length > 0){
+        sessionsRef.child(`${this.key}/messages`).push({
+          type: "text",
+          data: this.input,
+          timeStamp: moment().valueOf()
+        });
+        this.input = "";
+      }
     },
     startCountDown(data) {
       const end = moment(data.timeStamp);
