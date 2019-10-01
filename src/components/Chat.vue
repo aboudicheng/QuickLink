@@ -223,11 +223,11 @@ export default {
     },
     sendMessage() {
       const { id } = this.$route.params;
-      this.input = this.input.trim();
-      if (this.input.length > 0){
+      const clean = this.input.trim();
+      if (clean > 0){
         sessionsRef.child(`${this.key}/messages`).push({
           type: "text",
-          data: this.input,
+          data: clean,
           timeStamp: moment().valueOf()
         });
         this.input = "";
