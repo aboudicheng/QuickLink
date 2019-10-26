@@ -224,7 +224,7 @@ export default {
     sendMessage() {
       const { id } = this.$route.params;
       const clean = this.input.trim();
-      if (clean > 0){
+      if (clean.length > 0){
         sessionsRef.child(`${this.key}/messages`).push({
           type: "text",
           data: clean,
