@@ -13,7 +13,7 @@ export default new Router({
       component: Home
     },
     {
-      path: '/chat/:id',
+      path: '/:id',
       name: 'chat',
       // route level code-splitting
       // this generates a separate chunk (about.[hash].js) for this route

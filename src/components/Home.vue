@@ -34,7 +34,7 @@ export default {
   },
   computed: {
     codeURL() {
-      return window.location.origin + "/chat/" + this.code;
+      return window.location.origin + "/" + this.code;
     }
   },
   mounted() {
@@ -112,7 +112,7 @@ export default {
           const val = snapshot.val();
           const data = Object.values(val)[0];
           if (data.active) {
-            this.$router.push({ path: `/chat/${this.code}` });
+            this.$router.push({ path: `/${this.code}` });
           }
         });
     },
