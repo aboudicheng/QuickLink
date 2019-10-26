@@ -15,5 +15,22 @@ Step 2: Scan the QR code with your mobile phone, and you should be redirected to
 
 Note: Every data sent within the chat room will be erased after a countdown of 5 minutes.
 
+## Installation
+```
+// Clone repo
+git clone https://github.com/aboudicheng/QuickLink.git
+
+// Switch directory
+cd quick-link/
+
+// Install necessary dependencies
+npm install
+
+// Configure src/db.js with your own firebase credentials. See https://firebase.google.com/docs/web/setup for details
+
+// Run on localhost:8080
+npm run serve
+```
+
 ## Contribution
 Feel free to submit any PRs.
